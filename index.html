@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>colorfield</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="stylesheet" href="dist/colorfield.min.css" />
+    <!-- <link rel="stylesheet" href="colorfield.css" /> -->
+    <style type="text/css">
+      body {
+        background-color: #e9ecef;
+        --color: #5185b3;
+
+      }
+
+      a {
+        color: #5185b3;
+        color: var(--color);
+        text-decoration: underline;
+      }
+
+      .github-fork-ribbon:before {
+        background-color: #5185b3;
+        background-color: var(--color);
+      }
+
+      footer {
+        padding: 4rem 0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      #main .container {
+        background-color: #ffffff;
+        padding: 4rem 0;
+      }
+    </style>
+    <script type="text/javascript" src="dist/colorfield.min.js"></script>
+    <!-- <script type="text/javascript" src="colorfield.js"></script> -->
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        var fields = colorfield()
+
+        fields[0].addEventListener('change', function () {
+          document.body.style.setProperty('--color', event.target.value)
+        })
+      })
+
+      function openColorfield () {
+        var color = document.querySelector('.colorfield')
+        color.open()
+      }
+
+      function setColor (c) {
+        var color = document.querySelector('.colorfield')
+        color.set(c)
+      }
+    </script>
+  </head>
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/kodie/colorfield" data-ribbon="Check me out on GitHub" title="Check me out on GitHub">Check me out on GitHub</a>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">colorfield</h1>
+        <p class="lead">A tiny, dependency-free, color input field helper that utilizes the native color picker.</p>
+        <p><a href="https://github.com/kodie/colorfield" target="_blank">https://github.com/kodie/colorfield</a></p>
+      </div>
+    </div>
+
+    <div id="main">
+      <div class="container">
+        <div class="colorfield">
+          <input type="color" id="main-color" value="#5185b3">
+          <button type="button" class="btn btn-light colorfield-open colorfield-value" data-colorfield-style-prop="background-color"></button>
+          <input type="text" class="colorfield-input" />
+          <button onClick="openColorfield()">Open</button>
+          <button onClick="setColor('#ff0000')">Set to Red</button>
+          <button onClick="setColor('#00ff00')">Set to Green</button>
+          <button onClick="setColor('#0000ff')">Set to Blue</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">&copy; 2021 <a href="https://kodieg.com" target="_blank">Kodie Grantham</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
