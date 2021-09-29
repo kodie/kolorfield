@@ -1,5 +1,5 @@
 {
-  "name": "colorfield",
+  "name": "@kodie/colorfield",
   "version": "0.0.1",
   "description": "A tiny, dependency-free, color input field helper that utilizes the native color picker.",
   "keywords": [
