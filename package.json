@@ -33,10 +33,11 @@
     "build": "npm run build-css && npm run build-js",
     "build-css": "cleancss --batch ./*.css --batch-suffix '.min' --output dist --debug --source-map",
     "build-js": "uglifyjs colorfield.js --comments /^!/ --compress --mangle --output dist/colorfield.min.js --source-map \"url='colorfield.min.js.map'\" --verbose",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard --env browser"
   },
   "devDependencies": {
     "clean-css-cli": "^5.3.3",
+    "standard": "^11.0.1",
     "uglify-js": "^3.10.4"
   }
 }

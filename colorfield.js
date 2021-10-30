@@ -56,8 +56,8 @@ var colorfield = function () {
         }
 
         if (valueInputs.length) {
-          for (var j = 0; j < valueInputs.length; j++) {
-            var valueInput = valueInputs[j]
+          for (var v = 0; v < valueInputs.length; v++) {
+            var valueInput = valueInputs[v]
 
             valueInput.addEventListener('change', function (e) {
               if (!e.colorfieldTriggered) {
@@ -77,15 +77,15 @@ var colorfield = function () {
 
         input.addEventListener('change', function (e) {
           if (valueInputs.length) {
-            for (var j = 0; j < valueInputs.length; j++) {
-              var valueInput = valueInputs[j]
+            for (var a = 0; a < valueInputs.length; a++) {
+              var valueInput = valueInputs[a]
               valueInput.value = input.value
             }
           }
 
           if (valueElements.length) {
-            for (var j = 0; j < valueElements.length; j++) {
-              var valueElement = valueElements[j]
+            for (var b = 0; b < valueElements.length; b++) {
+              var valueElement = valueElements[b]
               var valueElementType = valueElement.tagName.toLowerCase()
 
               if (valueElementType === 'input') {
@@ -97,8 +97,8 @@ var colorfield = function () {
           }
 
           if (stylePropElements.length) {
-            for (var j = 0; j < stylePropElements.length; j++) {
-              var stylePropElement = stylePropElements[j]
+            for (var c = 0; c < stylePropElements.length; c++) {
+              var stylePropElement = stylePropElements[c]
               var styleProps = stylePropElement.getAttribute('data-colorfield-style-prop').split(',')
 
               for (var k = 0; k < styleProps.length; k++) {

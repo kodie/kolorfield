@@ -1,5 +1,11 @@
 # colorfield
 
+[![npm package version](https://img.shields.io/npm/v/@kodie/colorfield.svg?style=flat-square)](https://www.npmjs.com/package/@kodie/colorfield)
+[![Travis build status](https://img.shields.io/travis/com/kodie/colorfield.svg?style=flat-square)](https://travis-ci.com/kodie/colorfield)
+[![npm package downloads](https://img.shields.io/npm/dt/@kodie/colorfield.svg?style=flat-square)](https://www.npmjs.com/package/@kodie/colorfield)
+[![code style](https://img.shields.io/badge/code_style-standard-yellow.svg?style=flat-square)](https://github.com/standard/standard)
+[![license](https://img.shields.io/github/license/kodie/colorfield.svg?style=flat-square)](license.md)
+
 A tiny, dependency-free, color input field helper that utilizes the native color picker.
 
 
