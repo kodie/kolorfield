@@ -1,5 +1,5 @@
 /*!
-  colorfield v0.0.1 (https://github.com/kodie/colorfield)
+  colorfield v0.0.2 (https://github.com/kodie/colorfield)
   by Kodie Grantham (https://kodieg.com)
 */
 
