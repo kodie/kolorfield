@@ -10,10 +10,12 @@ A tiny, dependency-free, color input field helper that utilizes the native color
 
 
 ## Demo
+
 Visit https://kodie.github.io/colorfield
 
 
 ## Usage
+
 Add the CSS (which is simply just used to hide the native color input):
 
 ```html
@@ -44,6 +46,7 @@ Initiates colorfield on any element that has the `colorfield` class. This should
 
 
 #### Example
+
 ```js
 window.addEventListener('load', function () {
   colorfield()
@@ -84,8 +87,13 @@ color.addEventListener('change', function () {
 
 ## Related
 
+ - [minitaur](https://github.com/kodie/minitaur) - The ultimate, dependency-free, easy to use, JavaScript plugin for creating and managing modals.
+
  - [filebokz](https://github.com/kodie/filebokz) - A tiny, dependency-free, highly customizable and configurable, easy to use file input with some pretty sweet features.
+
+ - [vanishing-fields](https://github.com/kodie/vanishing-fields) - A dependency-free, easy to use, JavaScript plugin for hiding and showing fields.
 
 
 ## License
+
 MIT. See the [license file](license.md) for more info.
