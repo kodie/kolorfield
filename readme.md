@@ -14,21 +14,54 @@ A tiny, dependency-free, color input field helper that utilizes the native color
 Visit https://kodie.github.io/colorfield
 
 
-## Usage
+## Installation
 
-Add the CSS (which is simply just used to hide the native color input):
 
-```html
-<link rel="stylesheet" href="dist/colorfield.min.css" />
-```
+### Manual Download
 
-and the JS:
+[Download the latest version of colorfield](https://github.com/kodie/colorfield/archive/refs/heads/main.zip) and then place the following HTML in your page's head element:
 
 ```html
 <script type="text/javascript" src="dist/colorfield.min.js"></script>
+<link rel="stylesheet" href="dist/colorfield.min.css" />
 ```
 
-and your HTML:
+
+### CDN (Courtesy of [jsDelivr](https://jsdelivr.com))
+
+Place the following HTML in your page's head element (check to make sure the version in the URLs are the version you want):
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kodie/colorfield@0.0.2/dist/colorfield.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kodie/colorfield@0.0.2/dist/colorfield.min.css" />
+```
+
+
+### [NPM](https://npmjs.com)
+
+```
+npm install @kodie/colorfield --save
+```
+
+
+### [GPM](https://github.com/itsahappymedium/gpm)
+
+```
+gpm install kodie/colorfield --save
+```
+
+
+### [Bower](https://bower.io)
+
+```
+bower install kodie/colorfield --save
+```
+
+
+## Usage
+
+
+### Basic HTML Structure
 
 ```html
 <div class="colorfield">
@@ -36,8 +69,6 @@ and your HTML:
   <button type="button" class="colorfield-open colorfield-value" data-colorfield-style-prop="background-color"></button>
 </div>
 ```
-
-And then just use the function below:
 
 
 ### The `colorfield` Function
