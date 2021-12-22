@@ -1,6 +1,6 @@
 {
   "name": "@kodie/colorfield",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A tiny, dependency-free, color input field helper that utilizes the native color picker.",
   "keywords": [
     "color",
@@ -27,17 +27,30 @@
     "url": "https://github.com/kodie/colorfield/issues"
   },
   "homepage": "https://kodie.github.io/colorfield",
-  "main": "colorfield.js",
   "license": "MIT",
+  "main": "dist/colorfield.js",
+  "module": "src/colorfield.js",
   "scripts": {
-    "build": "npm run build-css && npm run build-js",
-    "build-css": "cleancss --batch ./*.css --batch-suffix '.min' --output dist --debug --source-map",
-    "build-js": "uglifyjs colorfield.js --comments /^!/ --compress --mangle --output dist/colorfield.min.js --source-map \"url='colorfield.min.js.map'\" --verbose",
+    "build": "npm run test && npm run build-css && npm run minify-css && npm run build-js && npm run minify-js",
+    "build-css": "sass src:dist",
+    "build-js": "rollup --config rollup.config.js",
+    "minify-css": "cleancss --batch ./dist/*[^.min].css --batch-suffix '.min' --output dist --source-map --with-rebase",
+    "minify-js": "uglifyjs dist/colorfield.js --comments /^!/ --compress --mangle --output dist/colorfield.min.js --source-map \"url='colorfield.min.js.map'\"",
     "test": "standard --env browser"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@rollup/plugin-babel": "^5.3.0",
     "clean-css-cli": "^5.3.3",
-    "standard": "^11.0.1",
+    "core-js": "^3.19.2",
+    "rollup": "^2.60.2",
+    "sass": "^1.44.0",
+    "standard": "^16.0.4",
     "uglify-js": "^3.10.4"
+  },
+  "standard": {
+    "ignore": [
+      "/dist/*"
+    ]
   }
 }

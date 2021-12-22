@@ -1,1 +1,1 @@
-{"version":3,"sources":["colorfield.css"],"names":[],"mappings":"AAAA,8BACE,OAAQ,KACR,QAAS,EACT,SAAU,OACV,SAAU,SACV,MAAO,KACP,QAAS,GAGX,6BACE,OAAQ"}
+{"version":3,"sources":["../src/colorfield.scss"],"names":[],"mappings":"AAAA;;;AAME,8BACE,OAAA,KACA,QAAA,EACA,SAAA,OACA,SAAA,SACA,MAAA,KACA,QAAA,GAGF,6BACE,OAAA"}

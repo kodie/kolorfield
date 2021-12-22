@@ -1,0 +1,19 @@
+/*!
+  colorfield v0.1.0 (https://github.com/kodie/colorfield)
+  by Kodie Grantham (https://kodieg.com)
+*/
+
+.colorfield {
+  input[type="color"] {
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0.1px;
+    z-index: -1;
+  }
+  
+  .colorfield-open {
+    cursor: pointer;
+  }
+}

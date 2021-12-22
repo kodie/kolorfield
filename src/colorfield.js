@@ -1,20 +1,20 @@
 /*!
-  colorfield v0.0.2 (https://github.com/kodie/colorfield)
+  colorfield v0.1.0 (https://github.com/kodie/colorfield)
   by Kodie Grantham (https://kodieg.com)
 */
 
-var colorfield = function () {
-  var elements = document.getElementsByClassName('colorfield')
+const colorfield = () => {
+  const elements = document.getElementsByClassName('colorfield')
 
-  for (var i = 0; i < elements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     (function (element) {
-      var input = element.querySelector('input[type="color"]')
+      const input = element.querySelector('input[type="color"]')
 
       if (input) {
-        var openElements = element.getElementsByClassName('colorfield-open')
-        var valueInputs = element.getElementsByClassName('colorfield-input')
-        var valueElements = element.getElementsByClassName('colorfield-value')
-        var stylePropElements = element.querySelectorAll('[data-colorfield-style-prop]')
+        const openElements = element.getElementsByClassName('colorfield-open')
+        const valueInputs = element.getElementsByClassName('colorfield-input')
+        const valueElements = element.getElementsByClassName('colorfield-value')
+        const stylePropElements = element.querySelectorAll('[data-colorfield-style-prop]')
 
         element.open = function () {
           input.focus()
@@ -22,7 +22,7 @@ var colorfield = function () {
         }
 
         element.set = function (value) {
-          var currentValue = input.value
+          const currentValue = input.value
 
           if (value.charAt(0) !== '#') value = '#' + value
           if (value === currentValue) return
@@ -42,8 +42,8 @@ var colorfield = function () {
         }
 
         if (openElements.length) {
-          for (var j = 0; j < openElements.length; j++) {
-            var openElement = openElements[j]
+          for (let j = 0; j < openElements.length; j++) {
+            const openElement = openElements[j]
 
             openElement.addEventListener('click', function (e) {
               element.open()
@@ -56,8 +56,8 @@ var colorfield = function () {
         }
 
         if (valueInputs.length) {
-          for (var v = 0; v < valueInputs.length; v++) {
-            var valueInput = valueInputs[v]
+          for (let v = 0; v < valueInputs.length; v++) {
+            const valueInput = valueInputs[v]
 
             valueInput.addEventListener('change', function (e) {
               if (!e.colorfieldTriggered) {
@@ -77,16 +77,16 @@ var colorfield = function () {
 
         input.addEventListener('change', function (e) {
           if (valueInputs.length) {
-            for (var a = 0; a < valueInputs.length; a++) {
-              var valueInput = valueInputs[a]
+            for (let a = 0; a < valueInputs.length; a++) {
+              const valueInput = valueInputs[a]
               valueInput.value = input.value
             }
           }
 
           if (valueElements.length) {
-            for (var b = 0; b < valueElements.length; b++) {
-              var valueElement = valueElements[b]
-              var valueElementType = valueElement.tagName.toLowerCase()
+            for (let b = 0; b < valueElements.length; b++) {
+              const valueElement = valueElements[b]
+              const valueElementType = valueElement.tagName.toLowerCase()
 
               if (valueElementType === 'input') {
                 valueElement.val = input.value
@@ -97,11 +97,11 @@ var colorfield = function () {
           }
 
           if (stylePropElements.length) {
-            for (var c = 0; c < stylePropElements.length; c++) {
-              var stylePropElement = stylePropElements[c]
-              var styleProps = stylePropElement.getAttribute('data-colorfield-style-prop').split(',')
+            for (let c = 0; c < stylePropElements.length; c++) {
+              const stylePropElement = stylePropElements[c]
+              const styleProps = stylePropElement.getAttribute('data-colorfield-style-prop').split(',')
 
-              for (var k = 0; k < styleProps.length; k++) {
+              for (let k = 0; k < styleProps.length; k++) {
                 stylePropElement.style[styleProps[k]] = input.value
               }
             }
@@ -118,14 +118,18 @@ var colorfield = function () {
   return elements
 }
 
-colorfield.triggerEvent = function (type, element, data, delay) {
+colorfield.triggerEvent = (type, element, data, delay) => {
   return setTimeout(function () {
-    var e = new Event(type, { bubbles: true })
+    const e = new Event(type, { bubbles: true })
 
-    for (var key in data) {
-      if (data.hasOwnProperty(key)) e[key] = data[key]
+    for (const key in data) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        e[key] = data[key]
+      }
     }
 
     element.dispatchEvent(e)
   }, delay || 1)
 }
+
+export default colorfield

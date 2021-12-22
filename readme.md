@@ -43,6 +43,14 @@ Place the following HTML in your page's head element (check to make sure the ver
 npm install @kodie/colorfield --save
 ```
 
+```js
+// ES6
+import colorfield from '@kodie/colorfield'
+
+// CommonJS
+const colorfield = require('@kodie/colorfield')
+```
+
 
 ### [GPM](https://github.com/itsahappymedium/gpm)
 
