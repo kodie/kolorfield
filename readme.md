@@ -11,7 +11,7 @@ A tiny, dependency-free, color input field helper that utilizes the native color
 
 ## Demo
 
-Visit https://kodie.github.io/kolorfield
+Visit https://kolorfield.js.org
 
 
 ## Installation
