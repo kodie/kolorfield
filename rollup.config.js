@@ -1,11 +1,11 @@
 import { babel } from '@rollup/plugin-babel'
 
 const config = {
-  input: 'src/colorfield.js',
+  input: 'src/kolorfield.js',
   output: {
     dir: 'dist',
     format: 'umd',
-    name: 'colorfield',
+    name: 'kolorfield',
     sourcemap: true
   },
   plugins: [

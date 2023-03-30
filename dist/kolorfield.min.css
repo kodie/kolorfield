@@ -1,0 +1,5 @@
+/*!
+  kolorfield v0.2.0 (https://kolorfield.js.org)
+  by Kodie Grantham (https://kodieg.com)
+*/.kolorfield input[type=color]{height:.1px;opacity:0;overflow:hidden;position:absolute;width:.1px;z-index:-1}.kolorfield .kolorfield-open{cursor:pointer}
+/*# sourceMappingURL=kolorfield.min.css.map */

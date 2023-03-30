@@ -1,6 +1,6 @@
 {
-  "name": "@kodie/colorfield",
-  "version": "0.1.0",
+  "name": "kolorfield",
+  "version": "0.2.0",
   "description": "A tiny, dependency-free, color input field helper that utilizes the native color picker.",
   "keywords": [
     "color",
@@ -21,21 +21,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kodie/colorfield.git"
+    "url": "https://github.com/kodie/kolorfield.git"
   },
   "bugs": {
-    "url": "https://github.com/kodie/colorfield/issues"
+    "url": "https://github.com/kodie/kolorfield/issues"
   },
-  "homepage": "https://kodie.github.io/colorfield",
+  "homepage": "https://kolorfield.js.org",
   "license": "MIT",
-  "main": "dist/colorfield.js",
-  "module": "src/colorfield.js",
+  "main": "dist/kolorfield.js",
+  "module": "src/kolorfield.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "build": "npm run test && npm run build-css && npm run minify-css && npm run build-js && npm run minify-js",
     "build-css": "sass src:dist",
     "build-js": "rollup --config rollup.config.js",
     "minify-css": "cleancss --batch ./dist/*[^.min].css --batch-suffix '.min' --output dist --source-map --with-rebase",
-    "minify-js": "uglifyjs dist/colorfield.js --comments /^!/ --compress --mangle --output dist/colorfield.min.js --source-map \"url='colorfield.min.js.map'\"",
+    "minify-js": "uglifyjs dist/kolorfield.js --comments /^!/ --compress --mangle --output dist/kolorfield.min.js --source-map \"url='kolorfield.min.js.map'\"",
     "test": "standard --env browser"
   },
   "devDependencies": {

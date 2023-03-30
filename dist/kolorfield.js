@@ -1,49 +1,42 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.colorfield = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.kolorfield = factory());
 })(this, (function () { 'use strict';
 
   /*!
-    colorfield v0.1.0 (https://github.com/kodie/colorfield)
+    kolorfield v0.2.0 (https://kolorfield.js.org)
     by Kodie Grantham (https://kodieg.com)
   */
-  var colorfield = function colorfield() {
-    var elements = document.getElementsByClassName('colorfield');
 
+  var kolorfield = function kolorfield() {
+    var elements = document.getElementsByClassName('kolorfield');
     for (var i = 0; i < elements.length; i++) {
       (function (element) {
         var input = element.querySelector('input[type="color"]');
-
         if (input) {
-          var openElements = element.getElementsByClassName('colorfield-open');
-          var valueInputs = element.getElementsByClassName('colorfield-input');
-          var valueElements = element.getElementsByClassName('colorfield-value');
-          var stylePropElements = element.querySelectorAll('[data-colorfield-style-prop]');
-
+          var openElements = element.getElementsByClassName('kolorfield-open');
+          var valueInputs = element.getElementsByClassName('kolorfield-input');
+          var valueElements = element.getElementsByClassName('kolorfield-value');
+          var stylePropElements = element.querySelectorAll('[data-kolorfield-style-prop]');
           element.open = function () {
             input.focus();
             input.click();
           };
-
           element.set = function (value) {
             var currentValue = input.value;
             if (value.charAt(0) !== '#') value = '#' + value;
             if (value === currentValue) return;
             if (value.length > 7) value = value.substr(0, 7);
-
             if (value.length >= 4 && value.length < 7) {
               value = '#' + value[1] + value[1] + value[2] + value[2] + value[3] + value[3];
             }
-
             input.value = value;
-            colorfield.triggerEvent('change', input);
+            kolorfield.triggerEvent('change', input);
           };
-
           element.get = function () {
             return input.value;
           };
-
           if (openElements.length) {
             for (var j = 0; j < openElements.length; j++) {
               var openElement = openElements[j];
@@ -55,29 +48,25 @@
               }, false);
             }
           }
-
           if (valueInputs.length) {
-            var _loop = function _loop(v) {
+            var _loop = function _loop() {
               var valueInput = valueInputs[v];
               valueInput.addEventListener('change', function (e) {
-                if (!e.colorfieldTriggered) {
+                if (!e.kolorfieldTriggered) {
                   element.set(valueInput.value);
                 }
               }, false);
               valueInput.addEventListener('input', function (e) {
-                if (valueInput.colorfieldTimer) {
-                  clearTimeout(valueInput.colorfieldTimer);
+                if (valueInput.kolorfieldTimer) {
+                  clearTimeout(valueInput.kolorfieldTimer);
                 }
-
-                valueInput.colorfieldTimer = colorfield.triggerEvent('change', valueInput, {}, 1000);
+                valueInput.kolorfieldTimer = kolorfield.triggerEvent('change', valueInput, {}, 1000);
               });
             };
-
             for (var v = 0; v < valueInputs.length; v++) {
-              _loop(v);
+              _loop();
             }
           }
-
           input.addEventListener('change', function (e) {
             if (valueInputs.length) {
               for (var a = 0; a < valueInputs.length; a++) {
@@ -85,12 +74,10 @@
                 valueInput.value = input.value;
               }
             }
-
             if (valueElements.length) {
               for (var b = 0; b < valueElements.length; b++) {
                 var valueElement = valueElements[b];
                 var valueElementType = valueElement.tagName.toLowerCase();
-
                 if (valueElementType === 'input') {
                   valueElement.val = input.value;
                 } else {
@@ -98,45 +85,39 @@
                 }
               }
             }
-
             if (stylePropElements.length) {
               for (var c = 0; c < stylePropElements.length; c++) {
                 var stylePropElement = stylePropElements[c];
-                var styleProps = stylePropElement.getAttribute('data-colorfield-style-prop').split(',');
-
+                var styleProps = stylePropElement.getAttribute('data-kolorfield-style-prop').split(',');
                 for (var k = 0; k < styleProps.length; k++) {
                   stylePropElement.style[styleProps[k]] = input.value;
                 }
               }
             }
           });
-          colorfield.triggerEvent('change', input);
+          kolorfield.triggerEvent('change', input);
         } else {
-          console.warn(element, 'An color input field is required for each colorfield instance.');
+          console.warn(element, 'An color input field is required for each kolorfield instance.');
         }
       })(elements[i]);
     }
-
     return elements;
   };
-
-  colorfield.triggerEvent = function (type, element, data, delay) {
+  kolorfield.triggerEvent = function (type, element, data, delay) {
     return setTimeout(function () {
       var e = new Event(type, {
         bubbles: true
       });
-
       for (var key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
           e[key] = data[key];
         }
       }
-
       element.dispatchEvent(e);
     }, delay || 1);
   };
 
-  return colorfield;
+  return kolorfield;
 
 }));
-//# sourceMappingURL=colorfield.js.map
+//# sourceMappingURL=kolorfield.js.map

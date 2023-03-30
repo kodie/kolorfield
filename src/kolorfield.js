@@ -1,20 +1,20 @@
 /*!
-  colorfield v0.1.0 (https://github.com/kodie/colorfield)
+  kolorfield v0.2.0 (https://kolorfield.js.org)
   by Kodie Grantham (https://kodieg.com)
 */
 
-const colorfield = () => {
-  const elements = document.getElementsByClassName('colorfield')
+const kolorfield = () => {
+  const elements = document.getElementsByClassName('kolorfield')
 
   for (let i = 0; i < elements.length; i++) {
     (function (element) {
       const input = element.querySelector('input[type="color"]')
 
       if (input) {
-        const openElements = element.getElementsByClassName('colorfield-open')
-        const valueInputs = element.getElementsByClassName('colorfield-input')
-        const valueElements = element.getElementsByClassName('colorfield-value')
-        const stylePropElements = element.querySelectorAll('[data-colorfield-style-prop]')
+        const openElements = element.getElementsByClassName('kolorfield-open')
+        const valueInputs = element.getElementsByClassName('kolorfield-input')
+        const valueElements = element.getElementsByClassName('kolorfield-value')
+        const stylePropElements = element.querySelectorAll('[data-kolorfield-style-prop]')
 
         element.open = function () {
           input.focus()
@@ -34,7 +34,7 @@ const colorfield = () => {
 
           input.value = value
 
-          colorfield.triggerEvent('change', input)
+          kolorfield.triggerEvent('change', input)
         }
 
         element.get = function () {
@@ -60,17 +60,17 @@ const colorfield = () => {
             const valueInput = valueInputs[v]
 
             valueInput.addEventListener('change', function (e) {
-              if (!e.colorfieldTriggered) {
+              if (!e.kolorfieldTriggered) {
                 element.set(valueInput.value)
               }
             }, false)
 
             valueInput.addEventListener('input', function (e) {
-              if (valueInput.colorfieldTimer) {
-                clearTimeout(valueInput.colorfieldTimer)
+              if (valueInput.kolorfieldTimer) {
+                clearTimeout(valueInput.kolorfieldTimer)
               }
 
-              valueInput.colorfieldTimer = colorfield.triggerEvent('change', valueInput, {}, 1000)
+              valueInput.kolorfieldTimer = kolorfield.triggerEvent('change', valueInput, {}, 1000)
             })
           }
         }
@@ -99,7 +99,7 @@ const colorfield = () => {
           if (stylePropElements.length) {
             for (let c = 0; c < stylePropElements.length; c++) {
               const stylePropElement = stylePropElements[c]
-              const styleProps = stylePropElement.getAttribute('data-colorfield-style-prop').split(',')
+              const styleProps = stylePropElement.getAttribute('data-kolorfield-style-prop').split(',')
 
               for (let k = 0; k < styleProps.length; k++) {
                 stylePropElement.style[styleProps[k]] = input.value
@@ -108,9 +108,9 @@ const colorfield = () => {
           }
         })
 
-        colorfield.triggerEvent('change', input)
+        kolorfield.triggerEvent('change', input)
       } else {
-        console.warn(element, 'An color input field is required for each colorfield instance.')
+        console.warn(element, 'An color input field is required for each kolorfield instance.')
       }
     })(elements[i])
   }
@@ -118,7 +118,7 @@ const colorfield = () => {
   return elements
 }
 
-colorfield.triggerEvent = (type, element, data, delay) => {
+kolorfield.triggerEvent = (type, element, data, delay) => {
   return setTimeout(function () {
     const e = new Event(type, { bubbles: true })
 
@@ -132,4 +132,4 @@ colorfield.triggerEvent = (type, element, data, delay) => {
   }, delay || 1)
 }
 
-export default colorfield
+export default kolorfield

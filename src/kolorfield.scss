@@ -1,9 +1,9 @@
 /*!
-  colorfield v0.1.0 (https://github.com/kodie/colorfield)
+  kolorfield v0.2.0 (https://kolorfield.js.org)
   by Kodie Grantham (https://kodieg.com)
 */
 
-.colorfield {
+.kolorfield {
   input[type="color"] {
     height: 0.1px;
     opacity: 0;
@@ -13,7 +13,7 @@
     z-index: -1;
   }
   
-  .colorfield-open {
+  .kolorfield-open {
     cursor: pointer;
   }
 }
