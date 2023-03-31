@@ -1,8 +1,8 @@
 # kolorfield
 
-[![npm package version](https://img.shields.io/npm/v/@kodie/kolorfield.svg?style=flat-square)](https://www.npmjs.com/package/@kodie/kolorfield)
+[![npm package version](https://img.shields.io/npm/v/kolorfield.svg?style=flat-square)](https://www.npmjs.com/package/kolorfield)
 [![Travis build status](https://img.shields.io/travis/com/kodie/kolorfield.svg?style=flat-square)](https://travis-ci.com/kodie/kolorfield)
-[![npm package downloads](https://img.shields.io/npm/dt/@kodie/kolorfield.svg?style=flat-square)](https://www.npmjs.com/package/@kodie/kolorfield)
+[![npm package downloads](https://img.shields.io/npm/dt/kolorfield.svg?style=flat-square)](https://www.npmjs.com/package/kolorfield)
 [![code style](https://img.shields.io/badge/code_style-standard-yellow.svg?style=flat-square)](https://github.com/standard/standard)
 [![license](https://img.shields.io/github/license/kodie/kolorfield.svg?style=flat-square)](license.md)
 
@@ -126,13 +126,17 @@ color.addEventListener('change', function () {
 
 ## Related
 
- - [minitaur](https://github.com/kodie/minitaur) - The ultimate, dependency-free, easy to use, JavaScript plugin for creating and managing modals.
-
  - [filebokz](https://github.com/kodie/filebokz) - A tiny, dependency-free, highly customizable and configurable, easy to use file input with some pretty sweet features.
+
+ - [growfield](https://github.com/kodie/growfield) - A tiny, dependency-free JavaScript module for making textarea elements grow with their content.
 
  - [hashjump](https://github.com/kodie/hashjump) - A tiny, dependency-free JavaScript module for handling anchor links and scrolling elements into view.
 
- - [vanishing-fields](https://github.com/kodie/vanishing-fields) - A dependency-free, easy to use, JavaScript plugin for hiding and showing fields.
+ - [kloner](https://github.com/kodie/kloner) - A tiny, dependency-free JavaScript module for cloning/repeating elements.
+
+ - [minitaur](https://github.com/kodie/minitaur) - The ultimate, dependency-free, easy to use, JavaScript plugin for creating and managing modals.
+
+ - [peekfield](https://github.com/kodie/peekfield) - A dependency-free, easy to use, JavaScript plugin for hiding and showing fields.
 
 
 ## License
